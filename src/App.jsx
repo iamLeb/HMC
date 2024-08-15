@@ -4,10 +4,12 @@ import Home from "./pages/front/Home.jsx";
 import About from "./pages/front/About.jsx";
 import Service from "./pages/front/Service.jsx";
 import Single from "./pages/front/Single.jsx";
+import ScrollToTop from "./components/frontComponents/ScrollToTop.js";
 
 function App() {
     return (
         <BrowserRouter>
+            <ScrollToTop />
             <Routes>
                 <Route path="/" element={<FrontLayout />}>
                     <Route index element={<Home />} />

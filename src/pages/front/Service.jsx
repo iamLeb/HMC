@@ -5,6 +5,7 @@ import {GoArrowRight} from "react-icons/go";
 const services = [
     {
         title: 'Home Support Services',
+        price: '25',
         brief: 'Friendly check-in visits, errands, shopping, planning and preparing meals, housekeeping, laundry, accompaniment to appointments, and incidental transportation. ',
         list: [
             "Light housekeeping & Laundry",
@@ -20,6 +21,7 @@ const services = [
     },
     {
         title: 'Personal Care Services',
+        price: '28',
         brief: 'Personal Support Workers provide assistance with the private activities of daily living such as hygiene, grooming, toileting, medication reminders, and mobility.  ',
         list: [
             "Dressing",
@@ -36,6 +38,7 @@ const services = [
     },
     {
         title: 'Complex Care Services',
+        price: '35',
         brief: 'Complex care refers to services that must be performed by a regulated health professional, such as a Registered Nurse or a Registered Practical Nurse. \n' +
             'These services include:\n',
         list: [
@@ -62,7 +65,10 @@ const Service = () => {
             <div
                 className={'container mx-auto md:flex justify-between items-center md:space-x-4 space-y-4 md:space-y-0 p-2'}>
                 {services.map((service, index) => (
-                    <div key={index} className={'flex flex-col gap-4 bg-primary text-white rounded-lg w-full p-8'}>
+                    <div key={index} className={'relative flex flex-col gap-4 bg-primary text-white rounded-lg w-full p-8'}>
+                        <div className={'absolute bg-white text-primary p-5 font-san font-extrabold text-xl shadow-lg top-0 right-0 rounded-bl-full'}>
+                            ${service.price}/hr
+                        </div>
                         <h1 className={'font-bold text-2xl'}>{service.title}</h1>
                         <p>{service.brief}</p>
                         <ul className={'flex flex-col gap-4 mt-5'}>
