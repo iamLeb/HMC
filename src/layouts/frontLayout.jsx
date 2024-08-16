@@ -7,7 +7,7 @@ const FrontLayout = () => {
     return (
         <section>
             <Header />
-            <main className={'py-14'}>
+            <main className={'bg-gray-100 py-14'}>
                 <Outlet />
             </main>
             <Footer />
