@@ -11,7 +11,6 @@ const Header = () => {
         setIsSidebarOpen(!isSidebarOpen);
     };
 
-    // Array of links with paths
     const navLinks = [
         { name: 'Home', path: '/' },
         { name: 'About', path: '/about' },
@@ -39,9 +38,8 @@ const Header = () => {
                 </ul>
 
                 <div className={'hidden md:flex'}>
-                    <button
-                        className={'btn bg-primary hover:bg-primary-secondary text-xl px-5 md:px-10 py-4 text-white'}> +1
-                        (204) 558 6856
+                    <button className={'btn bg-primary hover:bg-primary-secondary text-xl px-5 md:px-10 py-4 text-white'}>
+                        +1 (204) 558 6856
                     </button>
                 </div>
 
@@ -53,7 +51,7 @@ const Header = () => {
 
             {/* Mobile Sidebar */}
             <div className={`fixed inset-0 bg-black bg-opacity-50 z-40 ${isSidebarOpen ? 'block' : 'hidden'}`} onClick={toggleSidebar}>
-                <div className={`fixed left-0 top-0 w-64 h-full bg-white p-4 transform ${isSidebarOpen ? 'translate-x-0' : '-translate-x-full'} transition-transform duration-300 ease-in-out`}>
+                <div className={`fixed left-0 top-0 w-full bg-white p-4 transform ${isSidebarOpen ? 'translate-y-0' : '-translate-y-full'} transition-transform duration-300 ease-in-out`}>
                     <div className={'flex justify-between items-center mb-6'}>
                         <img className={'w-32 cursor-pointer'} src={logo} alt="Logo" onClick={() => navigate('/')}/>
                         <HiX className={'text-3xl text-gray-600 cursor-pointer'} onClick={toggleSidebar} />

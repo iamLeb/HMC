@@ -11,7 +11,7 @@ const Home = () => {
             <About />
             <Connection />
             <Help />
-            <Event />
+            {/*<Event />*/}
         </section>
     );
 };
