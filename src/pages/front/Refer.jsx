@@ -5,6 +5,7 @@ import { GoArrowRight } from "react-icons/go";
 const Refer = () => {
     const [friends, setFriends] = useState([{ name: '', email: '', phone: '', address: '' }]);
     const [userInfo, setUserInfo] = useState({ name: '', email: '' });
+    const [errors, setErrors] = useState({});
 
     const handleAddFriend = () => {
         setFriends([...friends, { name: '', email: '', phone: '', address: '' }]);
@@ -29,14 +30,45 @@ const Refer = () => {
         setUserInfo({ ...userInfo, [event.target.name]: event.target.value });
     };
 
+    const validateEmail = (email) => {
+        const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return re.test(email);
+    };
+
+    const validateForm = () => {
+        const newErrors = {};
+
+        if (!userInfo.name) newErrors.userName = "Your name is required.";
+        if (!userInfo.email) {
+            newErrors.userEmail = "Your email is required.";
+        } else if (!validateEmail(userInfo.email)) {
+            newErrors.userEmail = "Your email is not valid.";
+        }
+
+        friends.forEach((friend, index) => {
+            if (!friend.name) newErrors[`friendName-${index}`] = "Friend's name is required.";
+            if (!friend.email) {
+                newErrors[`friendEmail-${index}`] = "Friend's email is required.";
+            } else if (!validateEmail(friend.email)) {
+                newErrors[`friendEmail-${index}`] = "Friend's email is not valid.";
+            }
+        });
+
+        setErrors(newErrors);
+
+        return Object.keys(newErrors).length === 0;
+    };
+
     const handleSubmit = (event) => {
         event.preventDefault();
-        const data = {
-            userInfo,
-            friends
-        };
-        console.log(data);
-        // Handle form submission logic here (e.g., sending data to an API)
+        if (validateForm()) {
+            const data = {
+                userInfo,
+                friends
+            };
+            console.log('Submitted Data:', data);
+            // Handle form submission logic here (e.g., sending data to an API)
+        }
     };
 
     return (
@@ -63,6 +95,7 @@ const Refer = () => {
                                     value={userInfo.name}
                                     onChange={handleUserInfoChange}
                                 />
+                                {errors.userName && <span className="text-red-500">{errors.userName}</span>}
                             </div>
 
                             <div className={'flex flex-col space-y-2 py-2 w-full'}>
@@ -76,6 +109,7 @@ const Refer = () => {
                                     value={userInfo.email}
                                     onChange={handleUserInfoChange}
                                 />
+                                {errors.userEmail && <span className="text-red-500">{errors.userEmail}</span>}
                             </div>
                         </div>
                     </fieldset>
@@ -96,6 +130,7 @@ const Refer = () => {
                                             value={friend.name}
                                             onChange={(event) => handleFriendChange(index, event)}
                                         />
+                                        {errors[`friendName-${index}`] && <span className="text-red-500">{errors[`friendName-${index}`]}</span>}
                                     </div>
 
                                     <div className={'flex flex-col space-y-2 py-2 w-full'}>
@@ -109,6 +144,7 @@ const Refer = () => {
                                             value={friend.email}
                                             onChange={(event) => handleFriendChange(index, event)}
                                         />
+                                        {errors[`friendEmail-${index}`] && <span className="text-red-500">{errors[`friendEmail-${index}`]}</span>}
                                     </div>
                                 </div>
 
