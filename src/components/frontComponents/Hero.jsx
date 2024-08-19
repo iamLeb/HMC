@@ -1,7 +1,9 @@
 import { GoArrowRight } from "react-icons/go";
 import { BiDonateHeart } from "react-icons/bi";
+import {useNavigate} from "react-router-dom";
 
 const Hero = () => {
+    const navigate = useNavigate();
     return (
         <section className={'h-screen bg-[#f7f5ec] p-5'}>
             <div className={'container mx-auto md:flex justify-between h-full items-center relative'}>
@@ -15,12 +17,12 @@ const Hero = () => {
                     </p>
                     <div className={'md:flex md:space-x-4 space-y-2 md:space-y-0'}>
                         <button className={'btn bg-primary hover:bg-primary-secondary text-xl px-5 md:px-10 py-4 text-white'}>
-                            <span>Book an Appointment</span>
+                            <span>Get Started</span>
                             <GoArrowRight />
                         </button>
-                        <button className={'btn bg-primary-secondary hover:bg-primary text-xl px-5 md:px-10 py-3 text-white'}>
+                        <button onClick={() => navigate('/services')} className={'btn bg-primary-secondary hover:bg-primary text-xl px-5 md:px-10 py-3 text-white'}>
                             <BiDonateHeart />
-                            <span>Donate</span>
+                            <span>View Services</span>
                         </button>
                     </div>
                 </div>

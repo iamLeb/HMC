@@ -1,7 +1,9 @@
 import aboutMap from "../../assets/images/about-map-img.png";
 import { GoArrowRight } from "react-icons/go";
+import {useNavigate} from "react-router-dom";
 
 const About = () => {
+    const navigate = useNavigate();
     return (
         <section className={'bg-white py-5'}>
             <div className={'container mx-auto'}>
@@ -30,7 +32,7 @@ const About = () => {
 
                     {/* Call to Action */}
                     <div className="flex justify-center md:justify-end mt-5">
-                        <button className={'btn bg-primary-secondary hover:bg-primary px-16 py-4 flex items-center'}>
+                        <button onClick={() => navigate('/about')} className={'btn bg-primary-secondary hover:bg-primary px-16 py-4 flex items-center'}>
                             <span>Read More</span>
                             <GoArrowRight className="ml-2" />
                         </button>

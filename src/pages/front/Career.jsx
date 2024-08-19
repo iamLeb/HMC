@@ -1,9 +1,10 @@
 import { IoMdTime } from "react-icons/io";
 import SubHeader from "../../components/frontComponents/SubHeader.jsx";
 import {GoArrowRight} from "react-icons/go";
+import {useNavigate} from "react-router-dom";
 
 const Career = () => {
-
+    const navigate = useNavigate();
     const jobs = [
         {
             title: 'Empowerment Support Specialist',
@@ -42,6 +43,7 @@ const Career = () => {
 
                             <div className={'flex'}>
                                 <button
+                                    onClick={() => navigate('/career/1')}
                                     className={'btn bg-primary hover:bg-primary-secondary text-xl px-5 md:px-8 py-4 text-white'}>
                                     <span>View Job</span>
                                     <GoArrowRight/>
