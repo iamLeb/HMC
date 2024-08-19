@@ -66,19 +66,19 @@ const Refer = () => {
                 userInfo,
                 friends
             };
-            console.log('Submitted Data:', data);
-            // Handle form submission logic here (e.g., sending data to an API)
+            console.log(data);
+            // sending data to API
         }
     };
 
     return (
         <section>
-            <SubHeader title="Contact" content="Reach out for any health care support" />
+            <SubHeader title="Refer a Friend" content="Refer a friend to receive 1 hour of service FREE!" />
             <form onSubmit={handleSubmit} className={'container mx-auto p-4'}>
                 <div className={'flex flex-col gap-4 bg-white rounded-xl p-5'}>
                     <div className={'flex flex-col gap-2'}>
                         <h1 className={'text-3xl text-primary font-san font-bold'}>Refer a Friend Today.</h1>
-                        <p>Refer a friend to receive 1 hour of service FREE!</p>
+                        <p>Use the below form to input your information and the information of the friend you'd like to refer to HMC</p>
                     </div>
 
                     <fieldset className={'border p-5 rounded-xl'}>
