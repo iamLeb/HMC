@@ -3,8 +3,11 @@ import { MdOutlinePhoneInTalk } from "react-icons/md";
 import { IoMailOpenOutline } from "react-icons/io5";
 import { MdOutlineSupportAgent } from "react-icons/md";
 import { FaHandHoldingHeart } from "react-icons/fa6";
+import {NavLinks} from "./NavLinks";
+import {useNavigate} from "react-router-dom";
 
 const Footer = () => {
+    const navigate = useNavigate();
     return (
         <footer className={'bg-[#061d24] text-white p-4 md:p-9 border-t-4 border-primary-secondary'}>
             <div className={'container mx-auto md:flex justify-between space-y-4'}>
@@ -59,29 +62,16 @@ const Footer = () => {
                         <span className={'font-san'}>Quick Links</span>
                     </div>
                     <ul className={'flex flex-col gap-4'}>
-                        <li>
+                        { NavLinks.map((link, i) => (
+                            <li className={'cursor-pointer'} key={i} onClick={() => navigate(link.path)}>
+                                <div>
+                                    <span>{link.name} Pages</span>
+                                </div>
+                            </li>
+                        ))}
+                        <li className={'cursor-pointer'} onClick={() => navigate('/career')}>
                             <div>
-                                <span>Home Page</span>
-                            </div>
-                        </li>
-                        <li>
-                            <div>
-                                <span>About Page</span>
-                            </div>
-                        </li>
-                        <li>
-                            <div>
-                                <span>Services Page</span>
-                            </div>
-                        </li>
-                        <li>
-                            <div>
-                                <span>Contact Page</span>
-                            </div>
-                        </li>
-                        <li>
-                            <div>
-                                <span>Register With HMC</span>
+                                <span>Career</span>
                             </div>
                         </li>
                     </ul>

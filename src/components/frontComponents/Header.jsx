@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import logo from '../../assets/images/logo.jpg';
 import { HiMenuAlt3, HiX } from "react-icons/hi";
+import {NavLinks} from "./NavLinks.js";
 
 const Header = () => {
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -11,13 +12,7 @@ const Header = () => {
         setIsSidebarOpen(!isSidebarOpen);
     };
 
-    const navLinks = [
-        { name: 'Home', path: '/' },
-        { name: 'About', path: '/about' },
-        { name: 'Services', path: '/services' },
-        { name: 'Contact', path: '/contact' },
-        { name: 'Register', path: '/register' }
-    ];
+
 
     return (
         <header className={'fixed z-50 w-full bg-white border-b'}>
@@ -28,7 +23,7 @@ const Header = () => {
 
                 {/* Desktop Menu */}
                 <ul className={'hidden md:flex space-x-4'}>
-                    {navLinks.map((link, index) => (
+                    {NavLinks.map((link, index) => (
                         <li key={index} onClick={() => navigate(link.path)}>
                             <div className={'cursor-pointer'}>
                                 <span>{link.name}</span>
@@ -57,7 +52,7 @@ const Header = () => {
                         <HiX className={'text-3xl text-gray-600 cursor-pointer'} onClick={toggleSidebar} />
                     </div>
                     <ul className={'space-y-4'}>
-                        {navLinks.map((link, index) => (
+                        {NavLinks.map((link, index) => (
                             <li key={index} onClick={() => { navigate(link.path); toggleSidebar(); }}>
                                 <div className={'cursor-pointer'}>
                                     <span>{link.name}</span>

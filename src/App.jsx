@@ -22,6 +22,7 @@ function App() {
                     <Route path={'/contact'} element={<Contact />} />
                     <Route path={'/career'} element={<Career />} />
                     <Route path={'/career/1'} element={<CareerSingle />} />
+                    <Route path={'/refer'} element={<CareerSingle />} />
                 </Route>
             </Routes>
         </BrowserRouter>

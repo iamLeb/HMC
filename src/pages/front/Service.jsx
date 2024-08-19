@@ -2,10 +2,12 @@ import SubHeader from "../../components/frontComponents/SubHeader.jsx";
 import {CiCircleCheck} from "react-icons/ci";
 import {GoArrowRight} from "react-icons/go";
 import {services} from "../../components/frontComponents/ServiceLists.js";
+import {useNavigate} from "react-router-dom";
 
 const Service = () => {
+    const navigate = useNavigate();
     return (
-        <section>
+        <section id={'services'}>
             <SubHeader title="Service" content="Below are the services we render here at Home My Choice"/>
 
             <div className={'flex flex-col gap-2 justify-center items-center py-4 md:py-9 text-center '}>
@@ -35,6 +37,7 @@ const Service = () => {
 
                         <div className={'mt-5'}>
                             <button
+                                onClick={() => navigate('/services/1')}
                                 className={'btn bg-primary-secondary hover:bg-white text-lg px-5 md:px-10 py-3 text-gray-800'}>
                                 <span>Get Started</span>
                                 <GoArrowRight/>

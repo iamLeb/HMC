@@ -1,8 +1,10 @@
 import { CiCircleCheck } from "react-icons/ci";
 import { GoArrowRight } from "react-icons/go";
 import {services} from "./ServiceLists.js";
+import {useNavigate} from "react-router-dom";
 
 const Service = () => {
+    const navigate = useNavigate();
     return (
         <section className={'flex flex-col gap-4 bg-[#f7f5ec] py-5'}>
             <div className={'flex flex-col gap-6 justify-center items-center py-2 text-center'}>
@@ -31,6 +33,7 @@ const Service = () => {
 
                         <div className={'mt-5'}>
                             <button
+                                onClick={() => navigate('/services/1')}
                                 className={'btn bg-primary-secondary hover:bg-white text-lg px-5 md:px-10 py-3 text-gray-800'}>
                                 <span>Get Started</span>
                                 <GoArrowRight/>
