@@ -8,6 +8,7 @@ import ScrollToTop from "./components/frontComponents/ScrollToTop.js";
 import Contact from "./pages/front/Contact.jsx";
 import Career from "./pages/front/Career.jsx";
 import CareerSingle from "./pages/front/CareerSingle.jsx";
+import Refer from "./pages/front/Refer.jsx";
 
 function App() {
     return (
@@ -22,6 +23,7 @@ function App() {
                     <Route path={'/contact'} element={<Contact />} />
                     <Route path={'/career'} element={<Career />} />
                     <Route path={'/career/1'} element={<CareerSingle />} />
+                    <Route path={'/refer'} element={<Refer />} />
                 </Route>
             </Routes>
         </BrowserRouter>
