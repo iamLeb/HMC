@@ -1,5 +1,5 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import FrontLayout from "./layouts/FrontLayout.jsx";
+import FrontLayout from "./layouts/frontLayout.jsx";
 import Home from "./pages/front/Home.jsx";
 import About from "./pages/front/About.jsx";
 import Service from "./pages/front/Service.jsx";
