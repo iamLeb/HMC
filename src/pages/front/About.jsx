@@ -17,16 +17,10 @@ const About = () => {
                     <h1 className="font-san font-bold text-primary text-3xl md:text-4xl">Empowering Lives, Enhancing
                         Independence</h1>
                     <p>
-                        For over 26 years, our organization has been a trusted NDIS disability service provider,
-                        dedicated to improving the lives of the elderly, disabled, impaired, and those with diverse
-                        health needs. We believe in a world where everyone deserves the opportunity to live
-                        independently and with dignity, regardless of their challenges.
+                        At Still Possible Support Home, we are committed to enhancing the quality of life for individuals by offering compassionate and professional care. Our team is dedicated to providing the right balance of assistance and independence through our range of services tailored to meet the unique needs of each client.
                     </p>
                     <p>
-                        Our team is comprised of passionate professionals who are committed to delivering personalized,
-                        high-quality care that is tailored to the unique needs of each individual we serve. From daily
-                        living assistance to specialized health services, we work tirelessly to ensure that our clients
-                        receive the support they need to thrive.
+                        At Still Possible Support Home, we believe in providing care with compassion and respect. Our mission is to improve the quality of life for those we serve, allowing them to live comfortably and independently in their homes and communities. Let us help you create a plan that fits your needs, so you can continue enjoying life to the fullest.
                     </p>
                     <p>
                         We understand that navigating the complexities of disability services can be overwhelming.

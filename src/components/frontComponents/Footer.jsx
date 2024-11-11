@@ -20,7 +20,7 @@ const Footer = () => {
                         <li>
                             <div className={'flex space-x-4 items-center'}>
                                 <MdOutlinePhoneInTalk />
-                                <span>+1 (204) 555 5555</span>
+                                <span>Loading...</span>
                             </div>
                         </li>
                         <li>

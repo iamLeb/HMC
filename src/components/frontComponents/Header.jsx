@@ -34,7 +34,7 @@ const Header = () => {
 
                 <div className={'hidden md:flex'}>
                     <button className={'btn bg-primary hover:bg-primary-secondary text-xl px-5 md:px-10 py-4 text-white'}>
-                        +1 (204) 558 6856
+                        Call Us
                     </button>
                 </div>
 

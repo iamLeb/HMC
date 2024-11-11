@@ -1,6 +1,7 @@
 import aboutMap from "../../assets/images/about-map-img.png";
 import { GoArrowRight } from "react-icons/go";
 import {useNavigate} from "react-router-dom";
+import React from "react";
 
 const About = () => {
     const navigate = useNavigate();
@@ -19,10 +20,22 @@ const About = () => {
                         <div className={'flex flex-col gap-4'}>
                             <h1 className={'font-san text-2xl md:text-6xl'}>Your Trusted Choice</h1>
                             <p>
-                                For over 26 years, we have been a reliable service provider, offering personalized care and support to our community. Our mission is to empower individuals to live independently, providing them with the resources they need to thrive.
+                                At Still Possible Support Home, we are committed to enhancing the quality of life for
+                                individuals by offering compassionate and professional care. Our team is dedicated to
+                                providing the right balance of assistance and independence through our range of services
+                                tailored to meet the unique needs of each client.
                             </p>
                             <p>
-                                We are dedicated to delivering compassionate, professional care, whether it's assisting with daily tasks, offering emotional support, or providing specialized services. Our team is here to make a positive impact on the lives of those we serve.
+                                At Still Possible Support Home, we believe in providing care with compassion and
+                                respect. Our mission is to improve the quality of life for those we serve, allowing them
+                                to live comfortably and independently in their homes and communities. Let us help you
+                                create a plan that fits your needs, so you can continue enjoying life to the fullest.
+                            </p>
+                            <p>
+                                We understand that navigating the complexities of disability services can be
+                                overwhelming.
+                                That's why we are here to guide and support our clients every step of the way, providing
+                                compassionate care that enhances their quality of life.
                             </p>
                         </div>
                         <div>
@@ -32,9 +45,10 @@ const About = () => {
 
                     {/* Call to Action */}
                     <div className="flex justify-center md:justify-end mt-5">
-                        <button onClick={() => navigate('/about')} className={'btn bg-primary-secondary hover:bg-primary px-16 py-4 flex items-center'}>
+                        <button onClick={() => navigate('/about')}
+                                className={'btn bg-primary-secondary hover:bg-primary px-16 py-4 flex items-center'}>
                             <span>Read More</span>
-                            <GoArrowRight className="ml-2" />
+                            <GoArrowRight className="ml-2"/>
                         </button>
                     </div>
                 </div>
